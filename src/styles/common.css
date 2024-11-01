@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+:root{
+    --colorText:#7F7F7F;
+    --bgColor:#131313;
+    --whiteColor:#FFFFFF;
+    --borderForm:#3D3D3D;
+    --font:'Fira Code',sans-serif;
+    --border-color: #FF4040;
+    --bgButton:  #4B72C2;
+}
+body{
+    padding: 50px;
+    font-family: var(--font);
+    font-weight: 400;
+    color: var(--colorText);
+    background-color: var(--bgColor);  
+}
+.container{
+    max-width: 800px;
+    margin: 0 auto ;
+    padding: 0 30px;
+}
+.Form{
+    padding-left: 300px;
+}
