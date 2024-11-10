@@ -1,11 +1,13 @@
 
-
 import './form.css';
 import { useState } from 'react';
 import Input from '../Input/Input';
+import Button from '../Button/Button';
+import PasswordInput from '../Password_Input/PasswordInput';
+import CheckboxInput from '../CheckboxInput/CheckboxInput';
+
 
 const Form = () => {
-  const [clickedInput, setClickedInput] = useState(null); 
   const [passwordShown, setPasswordShown] = useState(false);
   const [passwordRepeatShown, setPasswordRepeatShown] = useState(false);
 
@@ -32,7 +34,7 @@ const Form = () => {
     const isPasswordMatching = password === repeat_password && password !== '';
     
     if (!isPasswordMatching || !checkbox_password) {
-      alert('Пароль не подтвержден');
+      alert('Что-то не так с данными!');
       return;
     }
 
@@ -61,60 +63,40 @@ const Form = () => {
             type={field === 'phone' ? 'tel' : field === 'email' ? 'email' : 'text'}
             name={field}
             placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
-            clickedInput={clickedInput}
-            onFocus={() => setClickedInput(field)}
-            onBlur={() => setClickedInput(null)}
             onChange={handleInputChange}
           />
         ))}
 
-        <div className='password__wrapper'>
-          <Input
-            type={passwordShown ? 'text' : 'password'}
+          <PasswordInput 
             name="password"
             placeholder="Password"
-            clickedInput={clickedInput}
-            onFocus={() => setClickedInput('password')}
-            onBlur={() => setClickedInput(null)}
+            isVisible={passwordShown}
+            onToggle={() => setPasswordShown(!passwordShown)}
             onChange={handleInputChange}
           />
-          <button type="button"  className='showHide_password' onClick={() => setPasswordShown(!passwordShown)}>
-            {passwordShown ? 'Hide' : 'Show'} 
-          </button>
-        </div>
-
-        <div className='password__wrapper'>
-          <Input
-            type={passwordRepeatShown ? 'text' : 'password'}
+          
+          <PasswordInput 
             name="repeat_password"
             placeholder="Repeat password"
-            clickedInput={clickedInput}
-            onFocus={() => setClickedInput('repeat_password')}
-            onBlur={() => setClickedInput(null)}
+            isVisible={passwordRepeatShown}
+            onToggle={() => setPasswordRepeatShown(!passwordRepeatShown)}
             onChange={handleInputChange}
           />
-          <button type="button"  className='showHide_password' onClick={() => setPasswordRepeatShown(!passwordRepeatShown)}>
-            {passwordRepeatShown ? 'Hide' : 'Show'} 
-          </button>
-        </div>
+          <CheckboxInput
+            name="checkbox_password"
+            className="checkbox-password-real"
+            checked={person.checkbox_password}
+            onChange={handleInputChange}
+          />
 
-        <div className="checkbox-wrapper-1">
-          <label>
-            <Input
-              className="checkbox-password-real"
-              type="checkbox"
-              name="checkbox_password"
-              checked={person.checkbox_password}
-              onChange={handleInputChange}
-            />
-            <span className='custom-checkbox'></span>
-            Подтвердите пароль
-          </label>
-        </div>
+          <Button
+            className='form__button'
+            onClick={buttonControl}
+            text ='Продолжить'
+          />
       </form>
-      
-      <button className='form__button' onClick={buttonControl}>Продолжить</button>
     </div>
+
   );
 };
 
