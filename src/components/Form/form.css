@@ -11,3 +11,17 @@
     row-gap: 30px;
     flex-direction: column;
 }
+.form_item{
+    position: relative;
+}
+.error-message {
+    color: var(--error-color);
+    position: absolute; 
+    margin-top: 5px; 
+    font-size: 12px; 
+    left: 0;
+    top: 100%;
+}
+
+  
+

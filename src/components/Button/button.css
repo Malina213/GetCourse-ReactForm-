@@ -9,7 +9,7 @@
     
 }
 .form__button:hover{
-   background-color: #2c335a;
+   background-color: var(--btnHoverBg);
    transform: scale(1.1);
 }
 .password__wrapper{

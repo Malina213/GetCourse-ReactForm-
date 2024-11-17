@@ -1,8 +1,9 @@
 input {
-    border: 1px solid #ccc; 
-    color: #ffffff;
+    border: 1px solid var(--inputBrd); 
+    color: var(--whiteColor);
 }
 input:focus {
-    border: 1px solid #757373; 
-    background-color: #171d3a;
+    border: 1px solid var(--inputHoverBrd); 
+    background-color: var(--inputHoverBg);
 } 
+

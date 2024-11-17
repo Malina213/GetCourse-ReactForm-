@@ -14,7 +14,7 @@ const CheckboxInput = ({type="checkbox", name, className, checked, onChange}) =>
             />
             <span className='custom-checkbox'></span>
                 Подтверждаю данные 
-            </label>
+        </label>
     </div>
   );
 

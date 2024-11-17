@@ -2,8 +2,8 @@
 import Input from '../Input/Input';
 import Button from '../Button/Button';
 
-const PasswordInput = ({ name, placeholder, isVisible, onToggle, onChange}) => (
-    <div className='password__wrapper'>
+const PasswordInput = ({ name, placeholder, isVisible, onToggle, onChange,isErrors,button}) => (
+    <div className='form_item'>
         <Input
             type={isVisible ? 'text' : 'password'}
             name={name}
@@ -13,8 +13,9 @@ const PasswordInput = ({ name, placeholder, isVisible, onToggle, onChange}) => (
         <Button 
             type="button" className='showHide_password'
             onClick={onToggle}
-            text = {isVisible ? "Hidden" : "Show"}
+            text = {button ? (isVisible ? "Hidden" : "Show"):''}
         />
+         {isErrors && <span className="error-message">{isErrors}</span>}
     </div>
   );
 

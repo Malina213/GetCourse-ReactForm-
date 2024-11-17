@@ -8,6 +8,13 @@
     --font:'Fira Code',sans-serif;
     --border-color: #FF4040;
     --bgButton:  #4B72C2;
+    --error-color:red;
+    --brown:#3D3D3D;
+    --checkboxBg:#242424;
+    --btnHoverBg:#2c335a;
+    --inputHoverBrd:#a7a6a6;
+    --inputHoverBg:#171d3a;
+    --inputBrd:#ccc;
 }
 body{
     padding: 50px;
